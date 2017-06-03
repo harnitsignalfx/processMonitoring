@@ -4,8 +4,9 @@ Collectd Python plugin that returns a value of 1 if a process path or name is fo
 
 ## Install Instructions
 
-Place the python file - procmon.py in an appropriate location such as /usr/share/collectd/procmon-collectd-plugin
-Create a configuration file or use the default one - 10-procmon.conf and place it under /etc/collectd/managed_config/
+1. Place the python file - procmon.py in an appropriate location such as /usr/share/collectd/procmon-collectd-plugin
+2. Create a configuration file or use the default one - 10-procmon.conf and place it under /etc/collectd/managed_config/
+
 By default the configuration file tries to find the python file in the default location given under Step 1. But feel free to modify the location in Step 1 and make the same adjustment within the configuration file.
 
 ## Configuration
