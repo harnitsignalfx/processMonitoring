@@ -79,7 +79,7 @@ def dispatch_values(returnlist):
 	val = collectd.Values(type='gauge',plugin='process-mon-plugin')
 	for processes in returnlist:
 		val.type_instance = processes
-		for process in processes:
+		for process in returnlist[processes]:
 			val.plugin_instance = process["pid"]
 			val.values=[process["isRunning"]] 
 			collectd.info('Dispatching - %s' %val)
