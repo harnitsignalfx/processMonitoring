@@ -80,7 +80,7 @@ def dispatch_values(returnlist):
 	for processes in returnlist:
 		val.type_instance = processes
 		for process in returnlist[processes]:
-			val.plugin_instance = process["pid"]
+			val.plugin_instance = 'pid-'+str(process["pid"])
 			val.values=[process["isRunning"]] 
 			collectd.info('Dispatching - %s' %val)
 			val.dispatch()
