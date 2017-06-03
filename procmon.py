@@ -22,8 +22,8 @@ def config_callback(conf):
         	except Exception as e:
             		collectd.error('Failed to load the configuration %s due to %s' % (node.key, e))
             		raise e
-    if not processList:
-    	collectd.error('Failed to load the configuration due to unspecified process List')
+	if not processList:
+    		collectd.error('Failed to load the configuration due to unspecified process List')
 
 def init_callback():
 	collectd.register_read(read_callback,interval=INTERVAL)
