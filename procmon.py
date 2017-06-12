@@ -54,7 +54,7 @@ def read_callback():
 		                                processDetails = {}
 		                                processDetails["name"]=p.name()
 		                                processDetails["pid"]=p.pid
-		                                processDetails["isRunning"]=1
+		                                processDetails["cpu_percent"]=p.cpu_percent(interval=1)
 		                                if pattern in returnlist:
 		                                        processes = returnlist[pattern]
 		                                        processes.append(processDetails)
@@ -81,7 +81,7 @@ def dispatch_values(returnlist):
 		val.type_instance = processes
 		for process in returnlist[processes]:
 			val.plugin_instance = 'pid-'+str(process["pid"])
-			val.values=[process["isRunning"]] 
+			val.values=[process["cpu_percent"]] 
 			collectd.info('Dispatching - %s' %val)
 			val.dispatch()
 
